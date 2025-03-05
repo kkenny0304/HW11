@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>403 - 禁止訪問</title>
+    <title>禁止訪問</title>
     <style>
         body {
             background-color: #181818;
@@ -21,8 +21,12 @@
             width: 150px;
             margin-bottom: 20px;
         }
-        h1 {
-            font-size: 2em;
+        .face {
+            font-size: 5em;
+            transition: all 0.5s ease-in-out;
+        }
+        .sad {
+            transform: scaleY(1.2);
         }
         p {
             font-size: 1.2em;
@@ -45,8 +49,14 @@
 </head>
 <body>
 <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_Music_icon.svg" alt="YouTube Music Logo">
-<h1>403 - 禁止訪問</h1>
+<div class="face" id="face">😀</div>
 <p>抱歉，您無權存取此頁面。</p>
 <button class="btn" onclick="window.location.href='https://music.youtube.com'">返回 YouTube Music</button>
+<script>
+    setTimeout(() => {
+        document.getElementById('face').innerText = '😞';
+        document.getElementById('face').classList.add('sad');
+    }, 2000);
+</script>
 </body>
 </html>

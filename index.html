@@ -19,7 +19,10 @@
         }
         .face {
             font-size: 8em;
-            transition: all 0.5s ease-in-out;
+            transition: transform 0.5s ease-in-out;
+        }
+        .sad {
+            transform: scaleY(1.2);
         }
         p {
             font-size: 1.2em;
@@ -49,8 +52,13 @@
         let face = document.getElementById('face');
         face.innerText = '😀';
         setTimeout(() => {
+            face.classList.add('sad');
             face.innerText = '😞';
         }, 2000);
+        setTimeout(() => {
+            face.classList.remove('sad');
+            face.innerText = '😀';
+        }, 4000);
     }
     setInterval(animateFace, 4000);
     animateFace();

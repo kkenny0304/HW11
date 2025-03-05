@@ -17,16 +17,9 @@
             height: 100vh;
             margin: 0;
         }
-        .logo {
-            width: 150px;
-            margin-bottom: 20px;
-        }
         .face {
-            font-size: 5em;
+            font-size: 8em;
             transition: all 0.5s ease-in-out;
-        }
-        .sad {
-            transform: scaleY(1.2);
         }
         p {
             font-size: 1.2em;
@@ -48,15 +41,19 @@
     </style>
 </head>
 <body>
-<img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Youtube_Music_icon.svg" alt="YouTube Music Logo">
 <div class="face" id="face">😀</div>
 <p>抱歉，您無權存取此頁面。</p>
 <button class="btn" onclick="window.location.href='https://music.youtube.com'">返回 YouTube Music</button>
 <script>
-    setTimeout(() => {
-        document.getElementById('face').innerText = '😞';
-        document.getElementById('face').classList.add('sad');
-    }, 2000);
+    function animateFace() {
+        let face = document.getElementById('face');
+        face.innerText = '😀';
+        setTimeout(() => {
+            face.innerText = '😞';
+        }, 2000);
+    }
+    setInterval(animateFace, 4000);
+    animateFace();
 </script>
 </body>
 </html>
